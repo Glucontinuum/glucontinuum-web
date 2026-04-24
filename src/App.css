@@ -1,0 +1,31 @@
+/* Placeholder for App-specific styles */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.status {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  color: var(--text-secondary);
+}
+
+.error {
+  color: #ef4444; /* Red for errors */
+}
+
+.hint {
+  font-size: 0.9rem;
+  margin-top: var(--spacing-xs);
+  opacity: 0.8;
+}
+
+.page-footer {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
