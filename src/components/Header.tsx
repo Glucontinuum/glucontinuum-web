@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import { ExternalLink, Box, ShieldCheck, Zap, Download, Activity } from 'lucide-react';
+import { ExternalLink, Box, ShieldCheck, Zap, Download } from 'lucide-react';
 import type { GitHubRelease } from '../services/github';
 
 interface HeaderProps {
