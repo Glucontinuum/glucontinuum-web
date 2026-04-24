@@ -26,5 +26,7 @@ export function useReleases(owner: string, repo: string) {
     }
   }, [owner, repo]);
 
-  return { releases, loading, error };
+  const latestRelease = releases.length > 0 ? releases[0] : null;
+
+  return { releases, latestRelease, loading, error };
 }

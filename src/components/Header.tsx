@@ -1,17 +1,25 @@
 import React from 'react';
 import styles from './Header.module.css';
-import { ExternalLink, Box, ShieldCheck, Zap } from 'lucide-react';
+import { ExternalLink, Box, ShieldCheck, Zap, Download } from 'lucide-react';
+import type { GitHubRelease } from '../services/github';
 
 interface HeaderProps {
   owner: string;
   repo: string;
+  latestRelease: GitHubRelease | null;
 }
 
-const Header: React.FC<HeaderProps> = ({ owner, repo }) => {
+const Header: React.FC<HeaderProps> = ({ owner, repo, latestRelease }) => {
+  const downloadAsset = latestRelease?.assets.find(a => 
+    a.name.endsWith('.apk') || a.name.endsWith('.exe') || a.name.endsWith('.dmg') || a.name.endsWith('.zip')
+  ) || latestRelease?.assets[0];
+
   return (
     <header className={styles.header}>
       <div className={styles.hero}>
-        <div className={styles.badge}>v1.0.0 Stable</div>
+        <div className={styles.badge}>
+          {latestRelease ? `Latest: ${latestRelease.tag_name}` : 'v1.0.0 Stable'}
+        </div>
         <h1 className={styles.title}>Glucontinuum</h1>
         <p className={styles.tagline}>
           Intelligent glucose monitoring and control. Built for metabolic health, 
@@ -19,7 +27,17 @@ const Header: React.FC<HeaderProps> = ({ owner, repo }) => {
         </p>
         
         <div className={styles.actions}>
-          <a href="#releases" className={styles.primaryBtn}>Get the App</a>
+          {downloadAsset ? (
+            <a 
+              href={downloadAsset.browser_download_url} 
+              className={styles.primaryBtn}
+            >
+              <Download size={20} className={styles.btnIcon} />
+              Download {latestRelease?.tag_name}
+            </a>
+          ) : (
+            <a href="#releases" className={styles.primaryBtn}>Get the App</a>
+          )}
           <a 
             href={`https://github.com/${owner}/${repo}`} 
             target="_blank" 

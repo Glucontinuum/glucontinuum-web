@@ -7,11 +7,11 @@ const REPO_OWNER = 'Glucontinuum';
 const REPO_NAME = 'Glucontinuum';
 
 function App() {
-  const { releases, loading, error } = useReleases(REPO_OWNER, REPO_NAME);
+  const { releases, latestRelease, loading, error } = useReleases(REPO_OWNER, REPO_NAME);
 
   return (
     <div className="container">
-      <Header owner={REPO_OWNER} repo={REPO_NAME} />
+      <Header owner={REPO_OWNER} repo={REPO_NAME} latestRelease={latestRelease} />
       
       <main id="releases">
         <h2 className="release-section-title">Latest Releases</h2>
