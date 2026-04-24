@@ -3,8 +3,8 @@ import ReleaseCard from './components/ReleaseCard';
 import { useReleases } from './hooks/useReleases';
 import './App.css';
 
-const REPO_OWNER = 'glucontinuum';
-const REPO_NAME = 'glucontinuum';
+const REPO_OWNER = 'Glucontinuum';
+const REPO_NAME = 'Glucontinuum';
 
 function App() {
   const { releases, loading, error } = useReleases(REPO_OWNER, REPO_NAME);
