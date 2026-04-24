@@ -1,31 +1,49 @@
-/* Placeholder for App-specific styles */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-md);
-}
-
 .status {
   text-align: center;
-  padding: var(--spacing-xl) 0;
-  color: var(--text-secondary);
+  padding: var(--spacing-2xl) 0;
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 .error {
-  color: #ef4444; /* Red for errors */
+  background-color: #ffdad6; /* MD3 Error container */
+  color: #410002;
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  margin: var(--spacing-lg) 0;
 }
 
 .hint {
   font-size: 0.9rem;
-  margin-top: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
   opacity: 0.8;
 }
 
+.release-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 2px solid var(--md-sys-color-primary-container);
+  padding-bottom: var(--spacing-xs);
+  display: inline-block;
+}
+
 .page-footer {
-  margin-top: var(--spacing-xl);
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+  padding: var(--spacing-2xl) 0;
+  border-top: 1px solid var(--md-sys-color-surface-variant);
   text-align: center;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+.footer-links a {
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
 }

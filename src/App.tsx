@@ -11,29 +11,27 @@ function App() {
 
   return (
     <div className="container">
-      <Header 
-        owner={REPO_OWNER} 
-        repo={REPO_NAME} 
-        description="Release history and downloads for the Glucontinuum project."
-      />
+      <Header owner={REPO_OWNER} repo={REPO_NAME} />
       
-      <main>
+      <main id="releases">
+        <h2 className="release-section-title">Latest Releases</h2>
+        
         {loading && (
           <div className="status">
-            <p>Loading releases...</p>
+            <p>Fetching the latest builds...</p>
           </div>
         )}
 
         {error && (
           <div className="status error">
-            <p>Error: {error}</p>
-            <p className="hint">Make sure the repository is public and the name is correct.</p>
+            <p><strong>Error:</strong> {error}</p>
+            <p className="hint">The repository might be private or the GitHub API rate limit was reached.</p>
           </div>
         )}
 
         {!loading && !error && releases.length === 0 && (
           <div className="status">
-            <p>No releases found for this repository.</p>
+            <p>No public releases found yet. Check back soon!</p>
           </div>
         )}
 
@@ -45,7 +43,13 @@ function App() {
       </main>
 
       <footer className="page-footer">
-        <p>© {new Date().getFullYear()} Glucontinuum. Built with minimalist intent.</p>
+        <p>© {new Date().getFullYear()} Glucontinuum Project</p>
+        <p>Intelligent metabolic health monitoring.</p>
+        <div className="footer-links">
+          <a href={`https://github.com/${REPO_OWNER}/${REPO_NAME}`}>GitHub</a>
+          <a href={`https://github.com/${REPO_OWNER}/${REPO_NAME}/issues`}>Report an Issue</a>
+          <a href="#">Privacy Policy</a>
+        </div>
       </footer>
     </div>
   );

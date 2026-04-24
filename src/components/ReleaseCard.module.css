@@ -1,15 +1,13 @@
 .card {
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.card:last-child {
-  border-bottom: none;
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-lg);
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: 24px;
 }
 
 .header {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 .titleRow {
@@ -20,110 +18,94 @@
 }
 
 .tagName {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
 }
 
 .date {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
   display: flex;
   align-items: center;
   gap: 0.25rem;
 }
 
-.icon {
-  opacity: 0.6;
-}
-
 .name {
   font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 .body {
-  color: var(--text-primary);
   font-size: 1rem;
-  line-height: 1.7;
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.6;
   margin-bottom: var(--spacing-lg);
 }
 
-.body h1, .body h2, .body h3 {
-  margin-top: var(--spacing-md);
-  margin-bottom: var(--spacing-sm);
-  font-weight: 600;
-}
-
-.body ul, .body ol {
-  margin-left: var(--spacing-md);
-  margin-bottom: var(--spacing-sm);
-}
-
-.body li {
-  margin-bottom: 0.25rem;
-}
-
-.body code {
-  background-color: var(--hover-bg);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9em;
+.body blockquote {
+  border-left: 4px solid var(--md-sys-color-primary-container);
+  padding-left: var(--spacing-md);
+  color: var(--md-sys-color-on-surface-variant);
+  font-style: italic;
 }
 
 .assets {
-  background-color: var(--hover-bg);
+  background-color: var(--md-sys-color-surface-variant);
   padding: var(--spacing-md);
-  border-radius: 8px;
-  margin-bottom: var(--spacing-md);
+  border-radius: 16px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .assetsTitle {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  color: var(--md-sys-color-on-surface-variant);
   margin-bottom: var(--spacing-sm);
+  font-weight: 700;
 }
 
 .assetList {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 .assetLink {
+  background-color: var(--md-sys-color-surface);
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 8px 16px;
+  border-radius: 100px;
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: 0.95rem;
-  color: var(--text-primary);
-}
-
-.assetName {
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.assetSize {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+.assetLink:hover {
+  background-color: var(--md-sys-color-primary-container);
+  border-color: var(--md-sys-color-primary);
+  opacity: 1;
 }
 
 .footer {
-  margin-top: var(--spacing-md);
+  border-top: 1px solid var(--md-sys-color-surface-variant);
+  padding-top: var(--spacing-md);
 }
 
 .viewOnGithub {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
   font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--md-sys-color-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .viewOnGithub:hover {
-  color: var(--accent-color);
+  color: var(--md-sys-color-primary);
 }
