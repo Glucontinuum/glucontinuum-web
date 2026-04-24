@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ owner, repo, latestRelease }) => {
     <header className={styles.header}>
       <div className={styles.hero}>
         <div className={styles.logoWrapper}>
-          <Activity size={48} className={styles.mainIcon} />
+          <img src="/favicon.svg" alt="Glucontinuum Logo" className={styles.mainIcon} width={48} height={48} />
         </div>
         <div className={styles.badge}>
           {latestRelease ? `Latest: ${latestRelease.tag_name}` : 'v1.0.0 Stable'}

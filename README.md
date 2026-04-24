@@ -1,73 +1,25 @@
-# React + TypeScript + Vite
+# Glucontinuum Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official website for **Glucontinuum** — an intelligent metabolic health monitoring platform.
 
-Currently, two official plugins are available:
+This repository serves as the public face of the project, hosting the landing page and providing access to official releases (mirrored from the private core repository).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About the Project
+Glucontinuum is a cross-platform application for intelligent glucose monitoring and control, built with **React, Vite, Capacitor, Material Design 3, and Hexagonal Architecture**.
 
-## React Compiler
+### Sustainable Architecture
+The project follows **Lightweight Hexagonal Architecture (Ports and Adapters)**, ensuring strict isolation between the domain logic and infrastructure/UI layers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Design System
+The visual layer is grounded in **Material Design 3 (Material You)**, utilizing tokens and MD3 standards for a consistent and modern experience across all platforms.
 
-## Expanding the ESLint configuration
+## Releases
+Releases are automatically mirrored to this repository from the main project. The website dynamically fetches and displays these releases for public download.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite 8
+- **Icons**: Lucide React
+- **Styling**: Vanilla CSS (MD3 Tokens)
+- **Content**: React Markdown
+- **Deployment**: GitHub Pages
