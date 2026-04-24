@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Header.module.css';
-import { ExternalLink, Box, ShieldCheck, Zap, Download } from 'lucide-react';
+import { ExternalLink, Box, ShieldCheck, Zap, Download, Activity } from 'lucide-react';
 import type { GitHubRelease } from '../services/github';
 
 interface HeaderProps {
@@ -17,6 +17,9 @@ const Header: React.FC<HeaderProps> = ({ owner, repo, latestRelease }) => {
   return (
     <header className={styles.header}>
       <div className={styles.hero}>
+        <div className={styles.logoWrapper}>
+          <Activity size={48} className={styles.mainIcon} />
+        </div>
         <div className={styles.badge}>
           {latestRelease ? `Latest: ${latestRelease.tag_name}` : 'v1.0.0 Stable'}
         </div>
