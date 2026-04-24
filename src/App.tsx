@@ -4,7 +4,7 @@ import { useReleases } from './hooks/useReleases';
 import './App.css';
 
 const REPO_OWNER = 'Glucontinuum';
-const REPO_NAME = 'Glucontinuum';
+const REPO_NAME = 'glucontinuum-web';
 
 function App() {
   const { releases, latestRelease, loading, error } = useReleases(REPO_OWNER, REPO_NAME);
